@@ -1,8 +1,12 @@
 const express = require('express');
 const app = express();
-const PORT = 3000;
+const PORT=27017;
+const mongoose=require('mongoose')
+mongoose.connect('mongodb://127.0.0.1:21017/ecommerceDatabase')
 
-app.use(express.json()); // Middleware to parse JSON bodies
+
+// Middleware to parse JSON body
+app.use(express.json());
 
 // Import routes
 const userRoutes = require('./routes/user');
